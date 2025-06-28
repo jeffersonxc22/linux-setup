@@ -66,9 +66,6 @@ if [ ! -f ~/.zshrc ]; then
     touch ~/.zshrc
 fi
 
-if ! grep -q "alias zshconfig" ~/.zshrc; then
-    echo "alias zshconfig='code ~/.zshrc'" >> ~/.zshrc
-fi
 
 ### --- Git --- ###
 echo -e "\n>>> Verificando Git..."
@@ -118,6 +115,10 @@ plugins=(
     zsh-completions
 )
 EOL
+fi
+
+if ! grep -q "alias zshconfig" ~/.zshrc; then
+    echo "alias zshconfig='code ~/.zshrc'" >> ~/.zshrc
 fi
 
 ### --- Neofetch --- ###
